@@ -1,24 +1,12 @@
 # encoding: utf-8
 
-require 'chord'
+include_dirs = ['chordy/chords/', 'chordy/util/']
+include_dirs.each do |dir|
+  Dir[File.join(File.dirname(__FILE__), dir + "**.rb")].each do |file|
+    require file
+  end
+end
 
-require 'c_chords'
-require 'c_sharp_chords'
-require 'd_chords'
-require 'd_sharp_chords'
-require 'e_chords'
-require 'f_chords'
-require 'f_sharp_chords'
-require 'g_chords'
-require 'g_sharp_chords'
-require 'a_chords'
-require 'a_sharp_chords'
-require 'b_chords'
-
-require 'text'
-require 'section'
-
-require 'tuning'
 include Tuning
 
 module Chordy
